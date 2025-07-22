@@ -55,7 +55,7 @@ async function bootstrap() {
     },
   });
 
-  const PORT = process.env.port || 3000;
+  const PORT = process.env.PORT || 3000;
   await app.listen(PORT);
 
   console.log(`🚀 NNACT API is running at http://localhost:${PORT}/api`);
