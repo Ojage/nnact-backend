@@ -56,7 +56,8 @@ async function bootstrap() {
   });
 
   const PORT = process.env.PORT;
-  await app.listen(process.env.PORT);
+  await app.listen(process.env.PORT, '0.0.0.0');
+
 
   console.log(`🚀 NNACT API is running at http://localhost:${PORT}/api`);
   console.log(`📘 Swagger Docs available at http://localhost:${PORT}/api/docs`);
