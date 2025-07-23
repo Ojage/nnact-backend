@@ -10,10 +10,6 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   // Global Validation
-  // app.useGlobalPipes(
-  //   new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }),
-  // );
-
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -25,7 +21,11 @@ async function bootstrap() {
     }),
   );
 
-  // CORS Configuration
+  // CORS Configuration - Accept requests from anywhere
+  app.enableCors();
+
+  /*
+  // Original CORS Configuration (commented out for easy reversion)
   app.enableCors({
     origin: [
       'http://localhost:5173', // Vite/React frontend
@@ -39,6 +39,7 @@ async function bootstrap() {
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
+  */
 
   // Swagger Setup
   const config = new DocumentBuilder()
