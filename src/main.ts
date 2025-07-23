@@ -29,6 +29,9 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:5173', // Vite/React frontend
+      'https://nnact.vercel.app/', // Vercel frontend
+      'https://nnact.com', // the production frontend
+      'https://nnact-admin.vercel.app', // the production admin frontend
       'http://localhost:3001', // optional second frontend
       'https://admin.nnact.com', // the production frontend
     ],
@@ -57,7 +60,6 @@ async function bootstrap() {
 
   const PORT = process.env.PORT;
   await app.listen(process.env.PORT, '0.0.0.0');
-
 
   console.log(`🚀 NNACT API is running at http://localhost:${PORT}/api`);
   console.log(`📘 Swagger Docs available at http://localhost:${PORT}/api/docs`);
